@@ -18,14 +18,15 @@ public class PayDay {
         TimeCard[] cards = payday.createRunData();
 
         for (TimeCard card : cards) {
-            String n = card.getName();
-            double w = card.getHoursWorked();
+            String name = card.getName();
+            double hoursWorked = card.getHoursWorked();
             // ... etc for the other 2 fields
-            double r = card.getHourlyRate();
-            double d = card.getDeductionRate();
+            double hourlyRate = card.getHourlyRate();
+            double deduction = card.getDeductionRate();
+
 
             // you need to change the parameters on the method to take the input!
-            String result = payday.pay(n, r, w, d);
+            String result = payday.pay(name, hourlyRate, hoursWorked,deduction);
 
             outputReport.append(result);
             outputReport.append("\n");
@@ -42,8 +43,18 @@ public class PayDay {
      *   Notice the data type of each of the four.
      * @return a string of the form "Kris 215.00 10.75 204.25”
      */
-    public String pay(String n, double rate, double worked, double deduct) {
-        return null;
+    public String pay(String name, double hourlyRate, double hoursWorked, double deduction)
+    {
+        String result;
+         double grossPay = hourlyRate * hoursWorked;
+         double deduct = grossPay * deduction;
+         double netPay = grossPay - deduct;
+         result= String.format("%s,%.2f,%.2f,%.2f",name,grossPay,deduct,netPay);
+
+
+
+
+        return result ;
     }
 
 
@@ -57,11 +68,11 @@ public class PayDay {
         private double hourlyRate;
         private double deductionRate;
 
-        public TimeCard(String n, double r, double w, double d) {
-            this.name = n;
-            this.hourlyRate = r;
-            this.hoursWorked = w;
-            this.deductionRate = d;
+        public TimeCard(String name, double hoursWorked, double hourlyRate, double deductionRate) {
+            this.name = name;
+            this.hourlyRate = hourlyRate;
+            this.hoursWorked = hoursWorked;
+            this.deductionRate = deductionRate;
         }
 
 
