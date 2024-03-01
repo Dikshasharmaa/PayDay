@@ -10,6 +10,8 @@ public class PayDay {
     public static void main(String[] args) {
         PayDay payday = new PayDay();
 
+
+
         StringBuilder outputReport = new StringBuilder();
         outputReport.append("PayDayReport for this week\n\n");
 
@@ -27,6 +29,7 @@ public class PayDay {
 
             // you need to change the parameters on the method to take the input!
             String result = payday.pay(name, hourlyRate, hoursWorked,deduction);
+
 
             outputReport.append(result);
             outputReport.append("\n");
@@ -49,7 +52,7 @@ public class PayDay {
          double grossPay = hourlyRate * hoursWorked;
          double deduct = grossPay * deduction;
          double netPay = grossPay - deduct;
-         result= String.format("%s,%.2f,%.2f,%.2f",name,grossPay,deduct,netPay);
+         result= String.format("%s %.2f %.2f %.2f",name,grossPay,deduct,netPay);
 
 
 
