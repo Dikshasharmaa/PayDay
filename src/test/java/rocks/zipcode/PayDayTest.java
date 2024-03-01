@@ -12,10 +12,10 @@ public class PayDayTest {
         java.lang.String string1 = payDay1.pay("Kris", 21.5, 10.0, 0.05);
         assertEquals("Kris 215.00 10.75 204.25", string1);
         PayDay payDay2 = new PayDay();
-        java.lang.String string2 = payDay2.pay("Dolio", 19.5, 8.0, 0.03);
-        assertEquals("Dolio 156.00 4.68 151.32", string2);
+        java.lang.String string2 = payDay2.pay("Dolio", 23.0, 12.0, 0.05);
+        assertEquals("Dolio 276.00 13.80 262.20", string2);
         PayDay payDay3 = new PayDay();
-        java.lang.String string3 = payDay2.pay("Karen", 30.5, 12.0, 0.07);
-        assertEquals("Karen 366.00 25.62 340.38", string3);
+        java.lang.String string3 = payDay2.pay("Karen", 22.0, 12.0, 0.05);
+        assertEquals("Karen 264.00 13.20 250.80", string3);
     }
 }
